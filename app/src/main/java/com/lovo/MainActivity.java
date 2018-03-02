@@ -1,5 +1,6 @@
 package com.lovo;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,11 @@ import android.os.Bundle;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationBar.OnTabSelectedListener{
 
@@ -88,33 +94,45 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationB
         switch (position){
             case 0:
                 if(homeFragment == null){
-                    homeFragment = HomeFragment.newInstance("首页");
+                    homeFragment = (HomeFragment) getFragments().get("home");
                 }
                 transaction.replace(R.id.tb, homeFragment);
                 break;
             case 1:
                 if(findFragment == null){
-                    findFragment = FindFragment.newInstance("发现");
+                    findFragment = (FindFragment) getFragments().get("find");
                 }
                 transaction.replace(R.id.tb, findFragment);
                 break;
             case 2:
                 if(shopFragment == null){
-                    shopFragment = ShopFragment.newInstance("逛一逛");
+                    shopFragment = (ShopFragment) getFragments().get("shop");
                 }
                 transaction.replace(R.id.tb, shopFragment);
                 break;
             case 3:
                 if(myFragment == null){
-                    myFragment = MyFragment.newInstance("我的");
+                    myFragment = (MyFragment) getFragments().get("my");
                 }
                 transaction.replace(R.id.tb, myFragment);
                 break;
             default:
                 break;
         }
-
+        // 设置简单的过渡动画
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        // 添加返回
+        transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    private Map<String, Fragment> getFragments(){
+        Map<String, Fragment> fragmentMap = new HashMap<String, Fragment>();
+        fragmentMap.put("home", HomeFragment.newInstance("首页"));
+        fragmentMap.put("find", FindFragment.newInstance("发现"));
+        fragmentMap.put("shop", ShopFragment.newInstance("逛一逛"));
+        fragmentMap.put("my", MyFragment.newInstance("我的"));
+        return fragmentMap;
     }
 
     @Override
