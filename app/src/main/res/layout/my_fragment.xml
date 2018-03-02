@@ -6,10 +6,26 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/mMy"
+        android:id="@+id/iphone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_height="50dp"
+        android:hint="请输入用户名或手机号"
+        android:layout_marginTop="45dp"
+        android:paddingLeft="20dp"
+        android:textSize="18dp"
+        android:gravity="center|left"
+        android:background="@drawable/textview_border"
+        />
+
+    <TextView
+        android:id="@+id/pwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="20dp"
+        android:hint="密码"
+        android:textSize="18dp"
+        android:gravity="center|left"
+        android:background="@drawable/textview_border"
         />
 
 </LinearLayout>

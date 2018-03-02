@@ -34,10 +34,10 @@ public class MyFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.my_fragment, container, false);
-        Bundle bundle = getArguments();
-        String param = bundle.getString("param");
-        TextView tv = (TextView)view.findViewById(R.id.mMy);
-        tv.setText(param);
+//        Bundle bundle = getArguments();
+//        String param = bundle.getString("param");
+//        TextView tv = (TextView)view.findViewById(R.id.mMy);
+//        tv.setText(param);
         return view;
     }
 
