@@ -39,9 +39,9 @@ public class HomeFragment extends Fragment{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_fragment, container, false);
         Bundle bundle = getArguments();
-        String agrs1 = bundle.getString("param");
-        TextView tv = (TextView)view.findViewById(R.id.container);
-        tv.setText(agrs1);
+        String param = bundle.getString("param");
+        TextView tv = (TextView)view.findViewById(R.id.mHome);
+        tv.setText(param);
         return view;
     }
 
