@@ -5,27 +5,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/iphone"
+    <EditText
+        android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="请输入用户名或手机号"
+        android:hint="@string/login_phone"
+        android:inputType="phone"
+        android:maxLength="11"
         android:layout_marginTop="45dp"
         android:paddingLeft="20dp"
         android:textSize="18dp"
         android:gravity="center|left"
-        android:background="@drawable/textview_border"
+        android:background="@drawable/textview_border_bottom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         />
 
-    <TextView
+    <EditText
         android:id="@+id/pwd"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:paddingLeft="20dp"
-        android:hint="密码"
+        android:hint="@string/login_pwd"
+        android:inputType="textPassword"
         android:textSize="18dp"
         android:gravity="center|left"
-        android:background="@drawable/textview_border"
+        android:background="@drawable/textview_border_bottom"
+        android:drawableRight="@mipmap/ic_login_pw_yes_2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingRight="15dp"
         />
+
+    <!--style="@style/Widget.AppCompat.Button.Colored"-->
+
+    <TextView
+        style="@style/Widget.AppCompat.Button.Small"
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/login_login"
+        android:textColor="#ffffffff"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/login_reg_user"
+            android:layout_gravity="center|left"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/login_forget_pwd"
+            android:layout_gravity="center|right"
+            android:gravity="right"
+            />
+
+    </LinearLayout>
+
 
 </LinearLayout>
